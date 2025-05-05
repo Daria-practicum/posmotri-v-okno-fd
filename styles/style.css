@@ -99,6 +99,7 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: #fff;
 }
@@ -221,8 +222,8 @@ ol {
   appearance: none;
 }
 
-.search-form__textfield[type="text"]:focus-visible {
-  outline: none;
+.search-form__textfield[type="text"]:focus {
+  outline: 0;
 }
 
 .search-form__textfield[type="text"]:active {
@@ -249,6 +250,9 @@ ol {
   height: 19px;
   width: 19px;
   margin-right: 5px;
+  align-self: center;
+  justify-content: center;
+
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
@@ -257,6 +261,7 @@ ol {
   width: 15px;
   height: 15px;
   background-color: #fff;
+  align-self: center;
 }
 
 .search-form__label:focus {
