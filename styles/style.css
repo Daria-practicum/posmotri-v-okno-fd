@@ -67,7 +67,6 @@ ol {
 .content {
   display: grid;
   width: 1140px;
-  max-height: 534px;
   grid-template-columns: 711px 399px;
   grid-template-areas: "main__content aside";
   column-gap: 30px;
@@ -78,36 +77,49 @@ ol {
   display: grid;
   grid-area: aside;
   max-width: 399px;
-  max-height: 534px;
   gap: 22px;
 }
 
 .content__list-container {
   position: relative;
-  max-height: 298px;
-  overflow: hidden scroll;
+  height: 298px;
+  overflow:  auto ;
 }
 
 .content__list {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 27px;
+  row-gap: 28px;
+  overflow:  auto ;
 }
 
 .content__list-item {
   text-decoration: none;
-  padding: 0 3px 0 3px;
+  padding: 0 2px 0 2px;
 }
 
-.content__list-item:hover {
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.content__card-link:active {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+.content__card-link_current {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+.content__card-link:hover {
   text-decoration: underline;
 }
 
-.content__list-item:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__list-item:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -125,55 +137,41 @@ ol {
 }
 
 .content__video-card-description-container {
-  max-height: 103px;
   width: 196px;
   flex-grow: 1;
 }
 
-.content__video-card-description-container:active {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
 .content__accent {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.content__card-link {
-  text-decoration: none;
-  color: #fff;
-}
-
-.content__card-link_current:active {
-  background: rgba(255, 255, 255, 0.5);
+  color: rgba(84, 80, 80, 1);
 }
 
 .content__video-card-title {
-  font-family: "Oswald";
+  font-family: "Oswald", "Mriya Grotesk", "Arial";
   text-transform: uppercase;
   font-size: 30px;
-  overflow: auto;
+  overflow: hidden scroll;;
   text-overflow: ellipsis;
 }
 
 .content__video-card-description {
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", "Fira Sans", "Arial";
   font-size: 18px;
   line-height: 16.2px;
   font-weight: 400;
   line-clamp: 1;
   letter-spacing: 0%;
+  overflow: hidden;
 }
 
 .result {
   grid-area: main__content;
-  max-height: 534px;
   width: 711px;
   align-self: end;
 }
 
 .result__video-container {
   width: 711px;
-  max-height: 386px;
+  height: 386px;
   position: relative;
 }
 
@@ -188,13 +186,11 @@ ol {
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 16px;
-  max-height: 54px;
 }
 
 .search-form__fieldset-title {
   font-weight: 400;
   font-size: 18px;
-  letter-spacing: 0%;
   border: 0;
   padding-bottom: 5px;
 }
@@ -215,16 +211,22 @@ ol {
   width: 225px;
   background-color: transparent;
   color: white;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", "Fira Sans", "Arial";
   font-size: 18px;
   font-weight: 400;
-  border-width: 1px 0px 1px 0px;
-  border-color: #fff;
+  border-top: 1px solid #fff;
+  border-bottom:1px solid #fff;
+  border-left: none;
+  border-right: none;
   appearance: none;
 }
 
-.search-form__textfield[type="text"]:focus {
+.search-form__textfield[type="text"]:focus-visible {
   outline: none;
+}
+
+.search-form__textfield[type="text"]:active {
+  border: 1px solid #fff;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -234,12 +236,8 @@ ol {
 
 .search-form__checkbox-list {
   display: flex;
-  gap: 15px;
-}
-
-.search-form__checkbox-list {
-  display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 15px;
   background-color: transparent;
   cursor: pointer;
@@ -247,8 +245,6 @@ ol {
 
 .search-form__pseudo-checkbox {
   display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid #fff;
   height: 19px;
   width: 19px;
@@ -273,7 +269,7 @@ ol {
 }
 
 .search-form__label-text {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", "Fira Sans", "Arial";
   font-weight: 400;
   text-decoration: none;
 }
@@ -284,20 +280,19 @@ ol {
 
 .title {
   width: 259px;
-  max-height: 210px;
-  font-family: "Oswald";
+  font-family: "Oswald", "Mriya Grotesk", "Arial";
   line-height: 94%;
   text-transform: uppercase;
   font-size: 75px;
 }
 
 .button {
-  width: 194px;
-  height: 34px;
+  min-width: 194px;
+  min-height: 34px;
   border: 1px solid white;
   background: transparent;
   color: white;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", "Fira Sans", "Arial";
   font-size: 18px;
   font-weight: 700;
   margin-top: 20px;
@@ -314,7 +309,7 @@ ol {
 }
 
 .button:active {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(84, 80, 80, 1);
 }
 
 .button:focus-visible {
